@@ -249,7 +249,7 @@ var clean = function(item, retain){
 	var uid = item.uid;
 	if (Browser.Engine.trident){
 		if (item.clearAttributes){
-			var clone = retain && item.cloneNode(false);
+			var clone = (retain === true) && item.cloneNode(false);
 			item.clearAttributes();
 			if (clone) item.mergeAttributes(clone);
 		} else if (item.removeEvents){
